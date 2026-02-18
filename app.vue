@@ -1,12 +1,14 @@
 <script setup lang="ts">
-// --- SEO & META CONFIG ---
 useHead({
   title: 'Alifah Zachra | Portfolio',
   meta: [
     { name: 'description', content: 'Professional Portfolio of Alifah Zachra - Software Engineering & Project Management.' }
   ],
+  link: [
+    { rel: 'icon', type: 'image/png', href: '/logo.png' }
+  ],
   htmlAttrs: {
-    class: 'scroll-smooth' // Agar scroll halaman terasa halus
+    class: 'scroll-smooth' 
   }
 })
 </script>
@@ -18,8 +20,12 @@ useHead({
 
     <main>
       <HeroSection />
-      
-      </main>
+      <AboutSection />
+      <ExperienceSection />
+      <SkillsSection />
+      <TaskSection />
+      <PortfolioSection />
+    </main>
 
     <AppFooter />
     
