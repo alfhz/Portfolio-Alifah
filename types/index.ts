@@ -11,13 +11,21 @@ export interface ProjectItem {
     image: string;
     }
 
+export interface WorkflowStep {
+    icon: string;
+    title: string;
+    desc: string;
+    colorClass: string; 
+}
 export interface ExperienceItem {
     id: number;
     role: string;
     company: string;
     period: string;
-    desc: string; // Deskripsi pendek (untuk kartu depan)
-    details: string; // Deskripsi panjang (untuk modal pop-up)
+    desc: string;
+    details: string;
+    workflows: WorkflowStep[];
+    proofUrl: string;
 }
 
 export interface CertificationItem {

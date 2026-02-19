@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="mt-24 py-16 bg-gradient-to-br from-purple-50 via-white to-purple-50">
+        <div class="mt-24 py-16 bg-gradient-to-br from-purple-50 via-white to-purple-50" id="skills">
         <div class="container mx-auto px-4 text-center">
             <h3 class="text-xl md:text-2xl font-bold uppercase tracking-wider mb-12 text-slate-800">Skill & Interest</h3>
             

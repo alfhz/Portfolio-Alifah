@@ -122,7 +122,7 @@ const tasks: Task[] = [
         id: 1,
         label: 'Penugasan 1',
         title: 'Analisis Dokumen & Persuratan',
-        desc: 'Melakukan analisis mendalam terhadap dokumen legalitas dan menyusun draf surat keputusan untuk kegiatan organisasi.',
+        desc: 'Merancang konsep inovatif LKMM – TH berbasis simulasi organisasi dan praktik langsung, disertai penyusunan TOR serta RAB yang rasional untuk memastikan efektivitas kegiatan dan keberlanjutan implementasi program kerja.',
         type: 'document',
         mediaName: 'Laporan_Analisis_2024.pdf',
         mediaUrl: '' 
@@ -131,15 +131,15 @@ const tasks: Task[] = [
         id: 2,
         label: 'Penugasan 2',
         title: 'Infografis Data Statistik',
-        desc: 'Visualisasi data statistik penggunaan aplikasi dalam bentuk infografis yang menarik.',
+        desc: 'Menganalisis isu karier berbasis data dan merancang infografis informatif yang memuat statistik dari sumber kredibel, disusun secara visual, sistematis, dan komunikatif.',
         type: 'image',
         mediaUrl: 'https://placehold.co/600x400/png?text=Infographic'
     },
     {
         id: 3,
         label: 'Penugasan 3',
-        title: 'Video Profil Kreatif',
-        desc: 'Video pendek berdurasi 3 menit yang menampilkan profil tim dan dokumentasi proses.',
+        title: 'Video Kreatif',
+        desc: 'Menyusun dan menyampaikan analisis studi kasus organisasi dalam bentuk video kreatif, dengan pendekatan strategis terhadap negosiasi birokrasi, pengambilan keputusan adaptif, serta inovasi pengembangan program seni dan olahraga.',
         type: 'video',
         mediaUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     }

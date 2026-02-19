@@ -59,9 +59,12 @@
                         </div>
                     </div>
 
-                    <button class="w-full bg-brand-lime px-8 py-5 rounded-2xl font-bold text-brand-dark uppercase tracking-widest hover:bg-lime-400 hover:-translate-y-1 transition-all shadow-xl border-2 border-brand-dark/5">
-                        Get in Touch
-                    </button>
+                    <a 
+                        :href="experience.proofUrl" 
+                        target="_blank"
+                        class="block text-center w-full bg-brand-lime px-8 py-5 rounded-2xl font-bold text-brand-dark uppercase tracking-widest hover:bg-lime-400 hover:-translate-y-1 transition-all shadow-xl border-2 border-brand-dark/5">
+                        Get in Touch | Proof of Experience
+                    </a>
                     </div>
 
                     <div class="lg:col-span-7 bg-indigo-50 rounded-[3rem] p-8 md:p-12 relative overflow-hidden">
@@ -71,25 +74,22 @@
                     <h3 class="text-2xl font-bold text-slate-800 mb-8 relative z-10">Workflow Overview</h3>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-                        <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-lg transition duration-300">
-                        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-4">📝</div>
-                        <h4 class="font-bold text-slate-900 text-lg mb-2">1. Research</h4>
-                        <p class="text-slate-500 leading-relaxed">Understanding project requirements and user needs deeply.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-lg transition duration-300">
-                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-4">📊</div>
-                        <h4 class="font-bold text-slate-900 text-lg mb-2">2. Analyze</h4>
-                        <p class="text-slate-500 leading-relaxed">Formulating strategic plans based on data analysis.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-lg transition duration-300">
-                        <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-3xl mb-4">🎨</div>
-                        <h4 class="font-bold text-slate-900 text-lg mb-2">3. Design</h4>
-                        <p class="text-slate-500 leading-relaxed">Crafting intuitive designs and executing core tasks.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-lg transition duration-300">
-                        <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-3xl mb-4">🚀</div>
-                        <h4 class="font-bold text-slate-900 text-lg mb-2">4. Launch</h4>
-                        <p class="text-slate-500 leading-relaxed">Delivering final results and ensuring quality assurance.</p>
+                        <div 
+                            v-for="(step, index) in experience.workflows" 
+                            :key="index" 
+                            class="bg-white p-6 rounded-3xl shadow-sm hover:shadow-lg transition duration-300"
+                        >
+                            <div :class="['w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-4', step.colorClass]">
+                                {{ step.icon }}
+                            </div>
+                            
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">
+                                {{ index + 1 }}. {{ step.title }}
+                            </h4>
+                            
+                            <p class="text-slate-500 leading-relaxed">
+                                {{ step.desc }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
 
     // Props: Data experience yang dikirim dari parent
     defineProps<{
-    experience: ExperienceItem
+        experience: ExperienceItem
     }>()
 
     // Emits: Sinyal ke parent untuk menutup modal
