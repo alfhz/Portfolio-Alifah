@@ -21,9 +21,9 @@ useHead({
     <main>
       <HeroSection />
       <AboutSection />
+      <SkillsSection />
       <ExperienceSection />
       <CertificationSection />
-      <SkillsSection />
       <TaskSection />
       <PortfolioSection />
     </main>

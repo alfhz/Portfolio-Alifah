@@ -1,5 +1,5 @@
 <template>
-    <section class="min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-4 sm:px-4 py-6">
+    <section id="home" class="relative w-full overflow-hidden min-h-screen flex flex-col items-center pt-10 bg-[linear-gradient(to_right,#E7EEFE_0%,rgba(255,255,255,0.95)_35%,#FFFFFF_50%,#FFFFFF_75%,#F1F8DE_100%)]">
         
         <div class="relative mb-0 group">
             <img 
@@ -9,9 +9,8 @@
             />
         </div>
         
-        
         <div class="mb-5">
-            <span class="bg-brand-lime px-12 py-3 md:px-20 md:py-4 rounded-xl text-4xl md:text-2xl font-bold text-brand-dark shadow-lg inline-block tracking-tight">
+            <span class="bg-brand-lime hover:bg-lime-100 px-12 py-3 md:px-20 md:py-4 rounded-xl text-4xl md:text-2xl font-bold text-brand-dark shadow-lg inline-block tracking-tight hover:-translate-y-1 transition-transform duration-500">
                 <p class="text-slate-500 font-medium mb-0 text-sm md:text-sm text-center tracking-wide">
                     Hello! I Am ..
                 </p>

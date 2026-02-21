@@ -9,9 +9,10 @@ export interface ProjectItem {
     title: string;
     category: string;
     image: string;
-    }
+}
 
-export interface WorkflowStep {
+// Interface untuk data Experience
+export interface ContributionItem {
     icon: string;
     title: string;
     desc: string;
@@ -24,10 +25,11 @@ export interface ExperienceItem {
     period: string;
     desc: string;
     details: string;
-    workflows: WorkflowStep[];
+    keyContributions: ContributionItem[];
     proofUrl: string;
 }
 
+// Interface untuk data Certification
 export interface CertificationItem {
     id: number;
     name: string;
@@ -36,7 +38,7 @@ export interface CertificationItem {
     link: string;
 }
 
-// (Pastikan interface StatItem dan lainnya tetap ada di sini jika masih dipakai)
+// Interface untuk data Task/Assignment
 export interface StatItem {
     value: string;
     label: string;
@@ -49,10 +51,10 @@ export interface PortfolioItem {
     category: string;
     role: string;
     period: string;
-    shortDesc: string; // Deskripsi pendek untuk kartu depan
-    projectDesc: string; // Deskripsi detail Project
-    jobDesc: string; // Deskripsi detail Pekerjaan Kamu
-    techStack: string[]; // Array icon/nama teknologi (misal: 'Vue', 'Laravel')
-    images: string[]; // Array url gambar untuk slider
-    sourceUrl: string; // Link ke project/github
+    shortDesc: string; 
+    projectDesc: string; 
+    jobDesc: string; 
+    techStack: string[]; 
+    images: string[]; 
+    sourceUrl: string; 
 }

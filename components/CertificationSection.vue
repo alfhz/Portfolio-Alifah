@@ -1,46 +1,41 @@
 <template>
-    <section class="pt-8 pb-24 bg-slate-50 relative z-10" id="certifications">
-        <div class="container mx-auto px-4 sm:px-6">
+    <section class="py-20 bg-slate-50 relative z-10" id="certifications">
+        <div class="container w-[85%] md:w-[80%] max-w-6xl mx-auto">
         
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-[0.2em] uppercase text-slate-900 mb-4">
+            <h2 class="text-4xl md:text-2xl font-bold tracking-[0.2em] uppercase text-slate-900 mb-3">
             Certifications
             </h2>
             <div class="h-1 w-20 bg-brand-lime mx-auto rounded-full"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             <div 
             v-for="cert in visibleCertifications" 
             :key="cert.id"
-            class="bg-[#D9F99D] p-1 rounded-[2rem] hover:scale-[1.02] transition-transform duration-300"
+            class="h-full bg-gradient-to-b from-[#F7FEE7] via-[#E4F5AC] to-[#D9F99D] rounded-[2rem] p-6 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 border border-lime-300/30 shadow-sm hover:shadow-lime-200"
             >
-            <div class="bg-gradient-to-br from-[#eecda3] to-[#ef629f] h-full rounded-[1.8rem] p-[2px]"> 
-                <div class="bg-[#e4f5ac] h-full rounded-[1.7rem] p-6 flex flex-col justify-between border-b-4 border-lime-600/20">
-                
+            
+            <div class="mb-6">
+                <h4 class="font-bold text-slate-800 text-lg uppercase leading-tight mb-2 tracking-tight">
+                    {{ cert.name }}
+                </h4>
                 <div class="flex justify-between items-start mb-4">
-                    <div class="bg-white/50 p-3 rounded-2xl backdrop-blur-sm">
-                    <span class="text-2xl">🏆</span>
-                    </div>
-                    <span class="text-xs font-black bg-slate-900 text-white px-3 py-1 rounded-full">
+                    <p class="text-sm text-slate-600 font-bold uppercase tracking-wide">
+                    {{ cert.issuer }}
+                    </p>
+                    <span class="text-xs font-bold text-slate-600 px-3 py-1 rounded-full">
                     {{ cert.year }}
                     </span>
                 </div>
-                
-                <div>
-                    <h4 class="font-black text-slate-900 text-lg uppercase leading-tight mb-2 tracking-tight">
-                    {{ cert.name }}
-                    </h4>
-                    <p class="text-sm text-slate-600 font-bold uppercase tracking-wide mb-6">
-                    {{ cert.issuer }}
-                    </p>
-                </div>
-
-                <button class="w-full bg-[#6366F1] text-white py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-slate-900 transition-colors shadow-lg">
-                    <a :href="cert.link" target="_blank" class="block w-full h-full">See Credential</a>
-                </button>
-                </div>
             </div>
+
+            <button class="w-full bg-[#6366F1] text-white py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-[#371e88] transition-colors shadow-lg mt-auto">
+                <a :href="cert.link" target="_blank" class="block w-full h-full">
+                    See Credential
+                </a>
+            </button>
+
             </div>
         </div>
 

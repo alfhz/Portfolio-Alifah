@@ -1,15 +1,15 @@
 <template>
-    <section class="pt-24 pb-16 bg-slate-50 relative overflow-hidden" id="experience">
+    <section class="py-20 bg-white relative overflow-hidden" id="experience">
         
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div class="absolute top-20 -left-20 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 -right-20 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-20 -left-20 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 -right-20 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+        <div class="container w-[85%] md:w-[80%] max-w-6xl mx-auto relative z-10">
         
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-[0.2em] uppercase text-slate-900 mb-4">
+            <h2 class="text-4xl md:text-2xl font-bold tracking-[0.2em] uppercase text-slate-900 mb-3">
             Experiences
             </h2>
             <div class="h-1 w-20 bg-brand-purple mx-auto rounded-full"></div>
@@ -26,8 +26,11 @@
             <div class="w-16 h-4 bg-white/20 rounded-full mb-8 backdrop-blur-sm shadow-inner group-hover:w-24 transition-all duration-500"></div>
 
             <h3 class="font-bold text-2xl mb-2 leading-tight">{{ exp.role }}</h3>
-            <p class="text-xs font-bold text-indigo-200 uppercase tracking-widest mb-6 border-b border-white/10 pb-4 w-full">
+            <p class="text-xs font-bold text-indigo-200 uppercase tracking-widest border-white/10 pb-2 w-full">
                 {{ exp.company }}
+            </p>
+            <p class="text-xs font-semibold text-indigo-200 uppercase tracking-widest mb-6 border-b border-white/10 pb-4 w-full">
+                {{ exp.period }}
             </p>
             
             <p class="text-sm text-indigo-50 leading-relaxed opacity-90 mb-8 line-clamp-4 flex-grow">
@@ -85,11 +88,11 @@
         desc: 'Led organizational events and managed 70+ team members with strategic planning.',
         details: 'I led and organized various school events and initiatives with 70 team members. Included managing council meetings, assigning tasks, and communicating with both students and school staff.',
         proofUrl: 'https://drive.google.com/file/d/1j2BmZECkhO57PgN-k7LL4_dCjMAa63gT/view?usp=sharing',
-        workflows: [
-        { icon: '📝', colorClass: 'bg-purple-100', title: 'Planning & Research', desc: 'Understanding event requirements, school regulations, and gathering student aspirations.' },
-        { icon: '📊', colorClass: 'bg-blue-100', title: 'Strategy & Coordination', desc: 'Formulating strategic plans, presiding over council meetings, and delegating tasks.' },
-        { icon: '🎨', colorClass: 'bg-pink-100', title: 'Execution & Management', desc: 'Leading the day-to-day operations of school events and managing communications.' },
-        { icon: '🚀', colorClass: 'bg-green-100', title: 'Quality Control', desc: 'Monitoring progress and delivering a final evaluation to the school administration.' }
+        keyContributions: [
+        { icon: '🎯', colorClass: 'bg-purple-100', title: 'Strategic Event Planning', desc: 'Defined clear event objectives aligned with school regulations and student aspirations.' },
+        { icon: '🤝', colorClass: 'bg-blue-100', title: 'Team Leadership & Coordination', desc: 'Led council meetings, delegated responsibilities, and ensured effective collaboration among members.' },
+        { icon: '📢', colorClass: 'bg-pink-100', title: 'Operational Execution', desc: 'Oversaw end-to-end event implementation and managed communication with stakeholders.' },
+        { icon: '📊', colorClass: 'bg-green-100', title: 'Performance Evaluation', desc: 'Conducted post-event evaluations and delivered structured reports to school administration.' }
         ]
     },
     { 
@@ -97,14 +100,14 @@
         role: 'Front-End Developer', 
         company: 'PT Jago Talenta Indonesia', 
         period: 'Oct - Des 2023',
-        desc: 'Developed responsive user interfaces using Vue.js and Tailwind CSS for client apps.',
-        details: 'Collaborated with UI/UX designers to implement modern web designs. Optimized application performance and ensured cross-browser compatibility for client projects.',
+        desc: 'Developed responsive user interfaces using Laravel and Tailwind CSS for client apps.',
+        details: 'Collaborated with UI/UX designers to implement modern and responsive web designs. Worked closely with backend developers using RESTful APIs to integrate server-side logic and ensure seamless data flow between frontend and backend systems. Optimized application performance and ensured cross-browser compatibility for client projects.',
         proofUrl: 'https://drive.google.com/file/d/1_oUVUe_cOdVJ764dKSJ90QE7JJFZZJWt/view?usp=sharing',
-        workflows: [
-        { icon: '🔍', colorClass: 'bg-purple-100', title: 'UI/UX Review', desc: 'Analyzing Figma designs and planning the component structure before coding.' },
-        { icon: '💻', colorClass: 'bg-blue-100', title: 'Development', desc: 'Slicing UI into responsive Vue components using Tailwind CSS.' },
-        { icon: '⚙️', colorClass: 'bg-pink-100', title: 'Integration', desc: 'Connecting frontend components with backend APIs seamlessly.' },
-        { icon: '✅', colorClass: 'bg-green-100', title: 'Testing', desc: 'Ensuring cross-browser compatibility and fixing UI bugs.' }
+        keyContributions: [
+        { icon: '🎨', colorClass: 'bg-purple-100', title: 'UI Consistency Implementation', desc: 'Translated Figma designs into structured and reusable Laravel components with consistent styling.' },
+        { icon: '💻', colorClass: 'bg-blue-100', title: 'Responsive Component Development', desc: 'Developed responsive UI components using Laravel and Tailwind CSS to ensure adaptability across devices.' },
+        { icon: '🔗', colorClass: 'bg-pink-100', title: 'API Integration', desc: 'Integrated frontend components with backend APIs to enable dynamic and interactive features.' },
+        { icon: '🛠️', colorClass: 'bg-green-100', title: 'Cross-Browser Optimization', desc: 'Performed UI testing and resolved compatibility issues to improve user experience.' }
         ]
     },
     { 
@@ -112,29 +115,30 @@
         role: 'Full-Stack Developer', 
         company: 'PT Padepokan Tujuh Sembilan', 
         period: 'Jan - Apr 2024',
-        desc: 'Built end-to-end web solutions using Laravel and React with complex database integration.',
-        details: 'Designed database schemas, created RESTful APIs, and integrated them with dynamic frontend components. Managed deployment and server configuration.',
+        desc: 'Built end-to-end web solutions using Laravel and React with database integration.',
+        details: 'Acted as a Full Stack Developer, System Analyst, and QA. Conducted requirement analysis and produced System Design Documentation (SDD) to define system architecture and technical specifications. Designed and optimized database schemas, developed RESTful APIs, and integrated them with dynamic frontend components. As part of QA responsibilities, created and maintained testing documentation to ensure system functionality, reliability, and compliance with project requirements.',
         proofUrl: 'https://drive.google.com/file/d/1iNWshIX4FE5iCZifJremk_LNsBTGan61/view?usp=sharing',
-        workflows: [
-        { icon: '📋', colorClass: 'bg-purple-100', title: 'Requirement Analysis', desc: 'Gathering business logic and designing database schema architecture.' },
-        { icon: '🔗', colorClass: 'bg-blue-100', title: 'Backend Dev', desc: 'Building robust RESTful APIs using Laravel and managing server routes.' },
-        { icon: '⚛️', colorClass: 'bg-pink-100', title: 'Frontend Dev', desc: 'Creating interactive user interfaces using React and state management.' },
-        { icon: '🚢', colorClass: 'bg-green-100', title: 'Deployment', desc: 'Deploying the full application to production servers and monitoring health.' }
+        keyContributions: [
+        { icon: '🗂️', colorClass: 'bg-purple-100', title: 'Structured System Documentation', desc: 'Produced clear System Design Documentation (SDD) to align development with project requirements.' },
+        { icon: '🛠️', colorClass: 'bg-blue-100', title: 'API & Database Implementation', desc: 'Designed relational database schemas and implemented RESTful APIs for core application features.' },
+        { icon: '🔄', colorClass: 'bg-pink-100', title: 'Seamless Frontend Integration', desc: 'Integrated backend APIs with React components to ensure smooth data flow and user interaction.' },
+        { icon: '🧪', colorClass: 'bg-green-100', title: 'Testing & Validation Support', desc: 'Created testing documentation and performed validation to ensure features met defined requirements.' }
         ]
+
     },
     { 
         id: 4, 
         role: 'Event Coordinator', 
         company: 'Legacy Graduate 4\'24', 
         period: '2024',
-        desc: 'Orchestrated graduation event for 500+ attendees ensuring seamless execution.',
-        details: 'Managed logistics, scheduling, and vendor coordination to ensure a smooth graduation ceremony. Handled budgeting and on-site troubleshooting.',
+        desc: 'Orchestrated graduation event for 400+ attendees ensuring seamless execution.',
+        details: 'Served as Event Coordinator for the school graduation ceremony, developing the overall event concept and designing a comprehensive timeline from preparation to execution day. Coordinated with internal committees, vendors, and school stakeholders to ensure clear task delegation and timely execution. Ensured smooth event operations through proactive planning and on-site problem solving.',
         proofUrl: 'https://drive.google.com/file/d/1gwzijhpUflVXDb8sJBV49nryT6bvAM2q/view?usp=sharing',
-        workflows: [
-        { icon: '📅', colorClass: 'bg-purple-100', title: 'Concept Planning', desc: 'Drafting event run-down and determining the graduation theme.' },
-        { icon: '🤝', colorClass: 'bg-blue-100', title: 'Vendor Sourcing', desc: 'Negotiating with catering, decoration, and sound system vendors.' },
-        { icon: '🎤', colorClass: 'bg-pink-100', title: 'On-site Execution', desc: 'Directing the event flow on D-Day and handling emergency situations.' },
-        { icon: '📈', colorClass: 'bg-green-100', title: 'Post-Event', desc: 'Managing budget wrap-up and collecting feedback from participants.' }
+        keyContributions: [
+        { icon: '🎯', colorClass: 'bg-purple-100', title: 'Event Concept Development', desc: 'Developed the graduation theme and structured a comprehensive event run-down from preparation to execution.' },
+        { icon: '🤝', colorClass: 'bg-blue-100', title: 'Stakeholder & Vendor Coordination', desc: 'Coordinated with vendors and internal committees to align deliverables, timelines, and technical requirements.' },
+        { icon: '🎤', colorClass: 'bg-pink-100', title: 'Execution Leadership', desc: 'Led on-site operations during the event, ensuring smooth flow and resolving issues in real time.' },
+        { icon: '📊', colorClass: 'bg-green-100', title: 'Budget & Evaluation Oversight', desc: 'Managed budget reconciliation and facilitated post-event evaluation for continuous improvement.' }
         ]
     }
     ]
