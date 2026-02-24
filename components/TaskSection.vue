@@ -142,7 +142,7 @@ const tasks: Task[] = [
         title: 'Video Kreatif',
         desc: 'Menyusun dan menyampaikan analisis studi kasus organisasi dalam bentuk video kreatif, dengan pendekatan strategis terhadap negosiasi birokrasi, pengambilan keputusan adaptif, serta inovasi pengembangan program seni dan olahraga.',
         type: 'video',
-        mediaUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+        mediaUrl: 'https://polbanacid-my.sharepoint.com/personal/alifah_zachra_tif425_polban_ac_id/_layouts/15/embed.aspx?UniqueId=ad1cede6-44f3-4b57-aeb6-95b994e282af&embed=%7B%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create',
     }
 ]
 
