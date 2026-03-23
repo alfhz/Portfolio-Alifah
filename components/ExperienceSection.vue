@@ -60,7 +60,7 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref, onMounted, onUnmounted } from 'vue'
     import type { ExperienceItem } from '~/types'
     import ExperienceDetail from './ExperienceDetail.vue'
 
@@ -71,6 +71,9 @@
         if (typeof document !== 'undefined') {
             document.body.style.overflow = 'hidden'
         }
+        if (typeof window !== 'undefined') {
+            window.history.pushState({ modalOpen: true }, '')
+        }
     }
 
     function closeDetail() {
@@ -78,7 +81,31 @@
         if (typeof document !== 'undefined') {
             document.body.style.overflow = ''
         }
+        if (typeof window !== 'undefined' && window.history.state?.modalOpen) {
+            window.history.back()
+        }
     }
+
+    function handleBrowserBack() {
+        if (selectedExperience.value) {
+            selectedExperience.value = null
+            if (typeof document !== 'undefined') {
+                document.body.style.overflow = ''
+            }
+        }
+    }
+
+    onMounted(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('popstate', handleBrowserBack)
+        }
+    })
+
+    onUnmounted(() => {
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('popstate', handleBrowserBack)
+        }
+    })
 
     const experiences: ExperienceItem[] = [
     { 
@@ -125,7 +152,6 @@
         { icon: '🔄', colorClass: 'bg-pink-100', title: 'Seamless Frontend Integration', desc: 'Integrated backend APIs with React components to ensure smooth data flow and user interaction.' },
         { icon: '🧪', colorClass: 'bg-green-100', title: 'Testing & Validation Support', desc: 'Created testing documentation and performed validation to ensure features met defined requirements.' }
         ]
-
     },
     { 
         id: 4, 

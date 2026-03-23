@@ -81,13 +81,81 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, computed } from 'vue'
+    import { ref, computed, onMounted, onUnmounted } from 'vue'
     import type { PortfolioItem } from '~/types'
     import PortfolioDetail from './PortfolioDetail.vue'
 
     const selectedProject = ref<PortfolioItem | null>(null)
     const isExpanded = ref(false)
     const initialLimit = 6
+
+    function openDetail(item: PortfolioItem) {
+        selectedProject.value = item
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = 'hidden'
+        }
+        if (typeof window !== 'undefined') {
+            window.history.pushState({ modalOpen: true }, '')
+        }
+    }
+
+    function closeDetail() {
+        selectedProject.value = null
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = ''
+        }
+        if (typeof window !== 'undefined' && window.history.state?.modalOpen) {
+            window.history.back()
+        }
+    }
+
+    function handleBrowserBack() {
+        if (selectedProject.value) {
+            selectedProject.value = null
+            if (typeof document !== 'undefined') {
+                document.body.style.overflow = ''
+            }
+        }
+    }
+
+    onMounted(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('popstate', handleBrowserBack)
+        }
+    })
+
+    onUnmounted(() => {
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('popstate', handleBrowserBack)
+        }
+    })
+
+    const visibleProjects = computed(() => {
+        return isExpanded.value ? projects : projects.slice(0, initialLimit)
+    })
+
+    function toggleExpand() {
+        isExpanded.value = !isExpanded.value
+    }
+
+    function getTechIcon(name: string) {
+        const icons: Record<string, string> = {
+            'C': '/tools_assets/c.png', 
+            'React': '/tools_assets/react.png', 
+            'Laravel': '/tools_assets/laravel.png', 
+            'Tailwind': '/tools_assets/tailwind.png', 
+            'Figma': '/tools_assets/figma.png', 
+            'Node': '/tools_assets/nodejs.png',
+            'CSS': '/tools_assets/css.png',
+            'HTML': '/tools_assets/html.png',
+            'Git': '/tools_assets/git.png',
+            'JS': '/tools_assets/js.png',
+            'Mysql': '/tools_assets/mysql.png',
+            'PHP': '/tools_assets/php.png',
+            'Java': '/tools_assets/java.png' 
+        }
+        return icons[name] || '' 
+    }
 
     const projects: PortfolioItem[] = [
     {
@@ -235,48 +303,6 @@
     }
 
     ]
-
-    // --- LOGIC ---
-    const visibleProjects = computed(() => {
-        return isExpanded.value ? projects : projects.slice(0, initialLimit)
-    })
-
-    function toggleExpand() {
-        isExpanded.value = !isExpanded.value
-    }
-
-    function openDetail(item: PortfolioItem) {
-        selectedProject.value = item
-        if (typeof document !== 'undefined') {
-            document.body.style.overflow = 'hidden'
-        }
-    }
-
-    function closeDetail() {
-        selectedProject.value = null
-        if (typeof document !== 'undefined') {
-            document.body.style.overflow = ''
-        }
-    }
-
-    function getTechIcon(name: string) {
-        const icons: Record<string, string> = {
-            'C': '/tools_assets/c.png', 
-            'React': '/tools_assets/react.png', 
-            'Laravel': '/tools_assets/laravel.png', 
-            'Tailwind': '/tools_assets/tailwind.png', 
-            'Figma': '/tools_assets/figma.png', 
-            'Node': '/tools_assets/nodejs.png',
-            'CSS': '/tools_assets/css.png',
-            'HTML': '/tools_assets/html.png',
-            'Git': '/tools_assets/git.png',
-            'JS': '/tools_assets/js.png',
-            'Mysql': '/tools_assets/mysql.png',
-            'PHP': '/tools_assets/php.png',
-            'Java': '/tools_assets/java.png' 
-        }
-        return icons[name] || '' 
-    }
 </script>
 
 <style scoped>

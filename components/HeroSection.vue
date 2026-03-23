@@ -1,16 +1,16 @@
 <template>
     <section id="home" class="relative w-full overflow-hidden min-h-screen flex flex-col items-center pt-16 md:pt-20 bg-[linear-gradient(to_right,#E7EEFE_0%,rgba(255,255,255,0.95)_35%,#FFFFFF_50%,#FFFFFF_75%,#F1F8DE_100%)]">
         
-        <div class="relative mb-6 md:mb-8 group">
+        <div class="relative z-10 flex justify-center -mb-1 md:-mb-2 group pointer-events-none">
             <img 
                 src="/profile.png" 
                 alt="Alifah Zachra" 
-                class="relative z-10 w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover"
+                class="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover object-bottom drop-shadow-xl"
             />
         </div>
         
-        <div class="mb-6 md:mb-8 px-4 w-full text-center flex justify-center">
-            <span class="bg-brand-lime hover:bg-lime-100 px-6 py-3 md:px-12 md:py-4 lg:px-20 rounded-xl text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark shadow-lg inline-block tracking-tight hover:-translate-y-1 transition-transform duration-500">
+        <div class="relative z-20 mb-8 md:mb-10 px-4 w-full text-center flex justify-center">
+            <span class="bg-brand-lime hover:bg-lime-100 px-8 py-3 md:px-12 md:py-4 lg:px-20 rounded-xl text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark shadow-[0_4px_20px_rgb(0,0,0,0.08)] inline-block tracking-tight transition-transform duration-500 hover:-translate-y-1">
                 <p class="text-slate-500 font-medium mb-1 text-xs md:text-sm text-center tracking-wide">
                     Hello! I Am ..
                 </p>
@@ -18,7 +18,7 @@
             </span>
         </div>
 
-        <div class="max-w-4xl text-center space-y-3 mb-10 px-6 md:px-8">
+        <div class="max-w-4xl text-center space-y-3 mb-10 px-6 md:px-8 relative z-20">
             <p class="text-sm md:text-base lg:text-lg text-slate-800 font-medium leading-relaxed">
                 <span class="underline decoration-brand-purple decoration-2 underline-offset-4">Informatics Engineering Undergraduate</span> 
                 with expertise in 
@@ -32,7 +32,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-3 gap-2 md:gap-4 w-[90%] md:w-full max-w-xl px-2 md:px-0">
+        <div class="grid grid-cols-3 gap-2 md:gap-4 w-[90%] md:w-full max-w-xl px-2 md:px-0 relative z-20">
             <div 
                 v-for="(stat, index) in stats" 
                 :key="index" 
