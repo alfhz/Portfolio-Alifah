@@ -1,57 +1,57 @@
 <template>
     <section class="relative bg-[linear-gradient(to_right,#E7EEFE_0%,rgba(255,255,255,0.95)_35%,#FFFFFF_50%,#FFFFFF_75%,#F1F8DE_100%)]" id="portfolio">
         
-        <div class="container w-[85%] md:w-[80%] max-w-6xl mx-auto py-20">
+        <div class="container w-[90%] md:w-[85%] lg:w-[80%] max-w-6xl mx-auto py-16 md:py-20">
         
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-2xl font-bold tracking-[0.2em] uppercase text-slate-900 mb-3">
-                Portfolio
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-[0.2em] uppercase text-slate-900 mb-3">
+                    Portfolio
                 </h2>
-                <div class="h-1 w-20 bg-brand-lime mx-auto rounded-full"></div>
+                <div class="h-1 w-16 md:w-20 bg-brand-lime mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
                 <div 
-                v-for="project in visibleProjects" 
-                :key="project.id"
-                class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+                    v-for="project in visibleProjects" 
+                    :key="project.id"
+                    class="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg border border-slate-100 group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
                 >
-                <div class="relative h-56 overflow-hidden bg-slate-200">
+                <div class="relative h-48 md:h-56 overflow-hidden bg-slate-200">
                     <img 
-                    :src="project.images[0]" 
-                    :alt="project.title" 
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        :src="project.images[0]" 
+                        :alt="project.title" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-800 shadow-sm">
-                    {{ project.category }}
+                    <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-800 shadow-sm">
+                        {{ project.category }}
                     </div>
                 </div>
 
-                <div class="p-8 flex flex-col flex-grow">
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold text-slate-900 uppercase leading-none mb-2">{{ project.title }}</h3>
-                        <div class="flex gap-2 items-center mb-2">
+                <div class="p-5 md:p-6 lg:p-8 flex flex-col flex-grow">
+                    <div class="mb-3 md:mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-slate-900 uppercase leading-tight mb-2">{{ project.title }}</h3>
+                        <div class="flex flex-wrap gap-2 items-center mb-2">
                             <img 
                                 v-for="t in project.techStack" 
                                 :key="t" 
                                 :src="getTechIcon(t)" 
                                 :alt="t"
                                 :title="t"
-                                class="w-6 h-6 object-contain hover:scale-110 transition-transform duration-300"
+                                class="w-5 h-5 md:w-6 md:h-6 object-contain hover:scale-110 transition-transform duration-300"
                             />
                         </div>
                     </div>
 
-                    <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
-                    {{ project.shortDesc }}
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed mb-5 md:mb-6 line-clamp-3 flex-grow">
+                        {{ project.shortDesc }}
                     </p>
 
                     <button 
-                    @click="openDetail(project)"
-                    class="w-full bg-[#6366F1] text-white py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-[#371e88] transition-colors shadow-md"
+                        @click="openDetail(project)"
+                        class="w-full bg-[#6366F1] text-white py-2.5 md:py-3 rounded-xl font-bold text-[10px] md:text-xs uppercase tracking-widest hover:bg-[#371e88] transition-colors shadow-md active:scale-95"
                     >
-                    See
+                        See Detail
                     </button>
                 </div>
                 </div>
@@ -59,22 +59,22 @@
 
             <div v-if="projects.length > initialLimit" class="text-center">
                 <button 
-                @click="toggleExpand" 
-                class="group inline-flex items-center gap-2 text-slate-800 font-bold uppercase text-sm tracking-widest hover:text-brand-purple transition"
+                    @click="toggleExpand" 
+                    class="group inline-flex items-center gap-2 text-slate-800 font-bold uppercase text-xs md:text-sm tracking-widest hover:text-brand-purple transition"
                 >
-                {{ isExpanded ? 'Show Less' : 'More Portfolio' }}
-                <span :class="{'rotate-180': isExpanded}" class="transition-transform duration-300">▼</span>
+                    {{ isExpanded ? 'Show Less' : 'More Portfolio' }}
+                    <span :class="{'rotate-180': isExpanded}" class="transition-transform duration-300">▼</span>
                 </button>
             </div>
 
         </div>
 
         <Transition name="fade">
-        <PortfolioDetail 
-            v-if="selectedProject" 
-            :project="selectedProject" 
-            @close="closeDetail" 
-        />
+            <PortfolioDetail 
+                v-if="selectedProject" 
+                :project="selectedProject" 
+                @close="closeDetail" 
+            />
         </Transition>
 
     </section>
@@ -238,21 +238,25 @@
 
     // --- LOGIC ---
     const visibleProjects = computed(() => {
-    return isExpanded.value ? projects : projects.slice(0, initialLimit)
+        return isExpanded.value ? projects : projects.slice(0, initialLimit)
     })
 
     function toggleExpand() {
-    isExpanded.value = !isExpanded.value
+        isExpanded.value = !isExpanded.value
     }
 
     function openDetail(item: PortfolioItem) {
-    selectedProject.value = item
-    document.body.style.overflow = 'hidden'
+        selectedProject.value = item
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = 'hidden'
+        }
     }
 
     function closeDetail() {
-    selectedProject.value = null
-    document.body.style.overflow = ''
+        selectedProject.value = null
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = ''
+        }
     }
 
     function getTechIcon(name: string) {

@@ -1,58 +1,59 @@
 <template>
-    <section class="py-20 bg-white relative overflow-hidden" id="experience">
+    <section class="py-16 md:py-20 bg-white relative overflow-hidden" id="experience">
         
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div class="absolute top-20 -left-20 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 -right-20 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-20 -left-20 w-72 h-72 md:w-96 md:h-96 bg-brand-purple/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 -right-20 w-72 h-72 md:w-96 md:h-96 bg-brand-lime/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div class="container w-[85%] md:w-[80%] max-w-6xl mx-auto relative z-10">
+        <div class="container w-[90%] md:w-[85%] lg:w-[80%] max-w-6xl mx-auto relative z-10">
         
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-2xl font-bold tracking-[0.2em] uppercase text-slate-900 mb-3">
-            Experiences
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-[0.2em] uppercase text-slate-900 mb-3">
+                Experiences
             </h2>
-            <div class="h-1 w-20 bg-brand-purple mx-auto rounded-full"></div>
+            <div class="h-1 w-16 md:w-20 bg-brand-purple mx-auto rounded-full"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <div 
-            v-for="exp in experiences" 
-            :key="exp.id" 
-            class="bg-gradient-to-b from-[#6366F1] to-[#4F46E5] rounded-[2rem] p-8 text-white relative group hover:-translate-y-3 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-indigo-500/30 flex flex-col items-center text-center"
+                v-for="exp in experiences" 
+                :key="exp.id" 
+                class="bg-gradient-to-b from-[#6366F1] to-[#4F46E5] rounded-[2rem] p-6 md:p-8 text-white relative group hover:-translate-y-3 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-indigo-500/30 flex flex-col items-center text-center"
             >
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem]"></div>
-            
-            <div class="w-16 h-4 bg-white/20 rounded-full mb-8 backdrop-blur-sm shadow-inner group-hover:w-24 transition-all duration-500"></div>
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem]"></div>
+                
+                <div class="w-12 h-3 md:w-16 md:h-4 bg-white/20 rounded-full mb-6 md:mb-8 backdrop-blur-sm shadow-inner group-hover:w-20 md:group-hover:w-24 transition-all duration-500"></div>
 
-            <h3 class="font-bold text-2xl mb-2 leading-tight">{{ exp.role }}</h3>
-            <p class="text-xs font-bold text-indigo-200 uppercase tracking-widest border-white/10 pb-2 w-full">
-                {{ exp.company }}
-            </p>
-            <p class="text-xs font-semibold text-indigo-200 uppercase tracking-widest mb-6 border-b border-white/10 pb-4 w-full">
-                {{ exp.period }}
-            </p>
-            
-            <p class="text-sm text-indigo-50 leading-relaxed opacity-90 mb-8 line-clamp-4 flex-grow">
-                {{ exp.desc }}
-            </p>
+                <h3 class="font-bold text-xl md:text-2xl mb-2 leading-tight">{{ exp.role }}</h3>
+                
+                <p class="text-[10px] md:text-xs font-bold text-indigo-200 uppercase tracking-widest border-white/10 pb-2 w-full">
+                    {{ exp.company }}
+                </p>
+                <p class="text-[10px] md:text-xs font-semibold text-indigo-200 uppercase tracking-widest mb-4 md:mb-6 border-b border-white/10 pb-4 w-full">
+                    {{ exp.period }}
+                </p>
+                
+                <p class="text-xs md:text-sm text-indigo-50 leading-relaxed opacity-90 mb-6 md:mb-8 line-clamp-4 flex-grow">
+                    {{ exp.desc }}
+                </p>
 
-            <button 
-                @click="openDetail(exp)"
-                class="bg-brand-lime text-brand-dark px-8 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-brand-purple transition-all shadow-lg transform active:scale-95"
-            >
-                Learn More
-            </button>
+                <button 
+                    @click="openDetail(exp)"
+                    class="bg-brand-lime text-brand-dark px-6 py-3 md:px-8 md:py-3 rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-brand-purple transition-all shadow-lg transform active:scale-95"
+                >
+                    Learn More
+                </button>
             </div>
         </div>
         </div>
 
         <Transition name="fade">
-        <ExperienceDetail 
-            v-if="selectedExperience" 
-            :experience="selectedExperience" 
-            @close="closeDetail" 
-        />
+            <ExperienceDetail 
+                v-if="selectedExperience" 
+                :experience="selectedExperience" 
+                @close="closeDetail" 
+            />
         </Transition>
 
     </section>
@@ -66,17 +67,17 @@
     const selectedExperience = ref<ExperienceItem | null>(null)
 
     function openDetail(item: ExperienceItem) {
-    selectedExperience.value = item
-    if (typeof document !== 'undefined') {
-        document.body.style.overflow = 'hidden'
-    }
+        selectedExperience.value = item
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = 'hidden'
+        }
     }
 
     function closeDetail() {
-    selectedExperience.value = null
-    if (typeof document !== 'undefined') {
-        document.body.style.overflow = ''
-    }
+        selectedExperience.value = null
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = ''
+        }
     }
 
     const experiences: ExperienceItem[] = [

@@ -24,7 +24,6 @@ useHead({
       <SkillsSection />
       <ExperienceSection />
       <CertificationSection />
-      <TaskSection />
       <PortfolioSection />
     </main>
 
