@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
     const activities = [
-        { title: 'Develop and Innovate', desc: 'Building websites both the client-side and server-side with best practice.' },
+        { title: 'Develop and Innovate', desc: 'Building software both the client-side and server-side with best practice.' },
         { title: 'Lead and Manage', desc: 'Plan projects, lead teams, and allocate resources to ensure successful delivery.' },
         { title: 'Learn and Engage', desc: 'Enhance skills, pursue certifications, also connect with tech communities.' }
     ]

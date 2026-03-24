@@ -143,7 +143,7 @@
         role: 'Full-Stack Developer', 
         company: 'PT Padepokan Tujuh Sembilan', 
         period: 'Jan - Apr 2024',
-        desc: 'Built end-to-end web solutions using Laravel and React with database integration.',
+        desc: 'Built end-to-end software solutions using Laravel and React with database integration.',
         details: 'Acted as a Full Stack Developer, System Analyst, and QA. Conducted requirement analysis and produced System Design Documentation (SDD) to define system architecture and technical specifications. Designed and optimized database schemas, developed RESTful APIs, and integrated them with dynamic frontend components. As part of QA responsibilities, created and maintained testing documentation to ensure system functionality, reliability, and compliance with project requirements.',
         proofUrl: 'https://drive.google.com/file/d/1iNWshIX4FE5iCZifJremk_LNsBTGan61/view?usp=sharing',
         keyContributions: [
