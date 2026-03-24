@@ -1,5 +1,5 @@
 <template>
-    <section id="home" class="relative w-full overflow-hidden min-h-screen flex flex-col items-center pt-16 md:pt-20 bg-[linear-gradient(to_right,#E7EEFE_0%,rgba(255,255,255,0.95)_35%,#FFFFFF_50%,#FFFFFF_75%,#F1F8DE_100%)]">
+    <section id="about" class="relative w-full overflow-hidden min-h-screen flex flex-col items-center pt-16 md:pt-20 bg-[linear-gradient(to_right,#E7EEFE_0%,rgba(255,255,255,0.95)_35%,#FFFFFF_50%,#FFFFFF_75%,#F1F8DE_100%)]">
         
         <div class="relative z-10 flex justify-center -mb-1 md:-mb-2 group pointer-events-none">
             <img 

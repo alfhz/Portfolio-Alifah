@@ -12,10 +12,11 @@
 
             <div class="flex items-center gap-3 md:gap-8">
                 <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-600">
-                    <a href="#home" class="hover:text-brand-purple transition-colors">Home</a>
+                    <!-- <a href="#home" class="hover:text-brand-purple transition-colors">Home</a> -->
                     <a href="#about" class="hover:text-brand-purple transition-colors">Profile</a>
                     <a href="#skills" class="hover:text-brand-purple transition-colors">Skills</a>
-                    <!-- <a href="#tasks" class="hover:text-brand-purple transition-colors">Tasks</a> -->
+                    <a href="#experience" class="hover:text-brand-purple transition-colors">Experience</a>
+                    <a href="#certifications" class="hover:text-brand-purple transition-colors">Certifications</a>
                     <a href="#portfolio" class="hover:text-brand-purple transition-colors">Portfolio</a>
                 </div>
     
@@ -60,10 +61,11 @@
             </div>
 
             <div class="flex flex-col gap-6">
-                <a href="#home" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Home</a>
+                <!-- <a href="#home" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Home</a> -->
                 <a href="#about" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Profile</a>
                 <a href="#skills" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Skills</a>
-                <!-- <a href="#tasks" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Tasks</a> -->
+                <a href="#experience" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Experience</a>
+                <a href="#certifications" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Certifications</a>
                 <a href="#portfolio" @click="closeMenu" class="text-lg font-bold text-slate-800 hover:text-brand-purple transition-colors border-b border-slate-100 pb-3">Portfolio</a>
             </div>
 
