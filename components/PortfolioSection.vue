@@ -300,6 +300,45 @@
         techStack: ['C', 'Git'],
         images: ['/portfolio_assets/aplikasikeuangan.png'],
         sourceUrl: 'https://github.com/Dinesshh25/AplikasiKeuangan'
+    },
+    {
+        id: 12,
+        title: 'JabarExplore - Admin Tourism Data Management',
+        category: 'Desktop Dev (GUI-Based)',
+        role: 'Full Stack Developer',
+        period: '2026',
+        shortDesc: 'End-to-end desktop platform featuring automated scraping engines and database administration GUI.',
+        projectDesc: 'A comprehensive desktop application designed to streamline West Java tourism data management. The platform seamlessly integrates automated web scraping engines with a high-performance administrative GUI to handle end-to-end dataset collection, sanitation, and curation.',
+        jobDesc: 'Architected the entire application layer from scratch; engineered the automated BeautifulSoup scraping engine, developed the core CRUD system with local JSON persistence, and designed the fully interactive CustomTkinter interface featuring real-time multi-layered filtering, pagination, and data export features.',
+        techStack: ['Python', 'BeautifulSoup', 'JSON', 'Git'],
+        images: ['/portfolio_assets/jabar1.png', '/portfolio_assets/jabar2.png', '/portfolio_assets/jabar3.png', '/portfolio_assets/jabar4.png'],
+        sourceUrl: 'https://github.com/alfhz/B4_Proyek1_JabarExplore'
+    },
+    {
+        id: 13,
+        title: 'Peer To Peer Lending',
+        category: 'Desktop Dev (Console-Based)',
+        role: 'Full Stack Developer',
+        period: '2026',
+        shortDesc: 'Enterprise-grade P2P lending core engine engineered with Domain-Driven Design (DDD) and advanced design patterns.',
+        projectDesc: 'A robust core banking and risk validation engine for a Peer-to-Peer (P2P) lending platform. Built entirely using strict Domain-Driven Design (DDD) principles to isolate pure business logic from technical infrastructure. The system features a dynamic state machine for loan lifecycles, automated funding distribution, and a highly scalable risk assessment architecture.',
+        jobDesc: 'Spearheaded the Identity & Risk Management module. Engineered a multi-layered Risk Engine (Blacklist, Credit Score, Limit checks) utilizing the Chain of Responsibility pattern. Implemented Value Objects using Java Records to eliminate Primitive Obsession. Enforced Trunk Based Development for seamless team integration and achieved 96% unit test coverage in the Domain Risk layer via Test-Driven Development (TDD), resulting in a SonarQube Maintainability Rating of A (0 Bugs).',
+        techStack: ['Java', 'Maven', 'JUnit', 'Domain-Driven Design (DDD)', 'SonarQube', 'Git'],
+        images: ['/portfolio_assets/p2p1.png', '/portfolio_assets/p2p2.png', '/portfolio_assets/p2p3.png'],
+        sourceUrl: 'https://github.com/alfhz/b2-p2p-lending'
+    },
+    {
+        id: 14,
+        title: 'Royal Family Tree - Line of Succession',
+        category: 'Desktop Dev (Console-Based)',
+        role: 'Core Developer',
+        period: '2026',
+        shortDesc: 'A terminal-based C application utilizing a Left-Child Right-Sibling (LCRS) Non-Binary Tree to model the British Royal Family succession.',
+        projectDesc: 'An academic data structure project designed to model the complex lineage and primogeniture succession rules of the British Royal Family. The CLI platform utilizes a dynamic Non-Binary Tree (LCRS) architecture to navigate generations, accurately predict the line of succession, and dynamically simulate temporary exclusions of specific royal branches.',
+        jobDesc: 'Engineered the core Non-Binary Tree (LCRS) logic and search algorithms in C. Architected robust, case-insensitive traversal modules (Pre-Order, DFS) to efficiently locate royal members by name or succession queue. Developed recursive algorithms to accurately map and calculate total descendants, ensuring clean code practices through macro implementations and strict modularity.',
+        techStack: ['C', 'CLI', 'Data Structures', 'Non-Binary Tree', 'Algorithms'],
+        images: ['/portfolio_assets/royal1.png', '/portfolio_assets/royal2.png', '/portfolio_assets/royal3.png'],
+        sourceUrl: 'https://github.com/alfhz/royal-tree-succession'
     }
 
     ]
